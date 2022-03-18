@@ -66,11 +66,17 @@ git push --set-upstream origin <BRANCH_NAME>
 # or use all-in-one alias below
 gg
 
-# Then prepare merge on main branch, an easy solution is to squash your commits altogether
+# Then prepare merge on main branch
+# WARN: take care to be the only one to use this branch at that momement
 git rebasemain
+# an easy solution is to SQUASH your commits altogether
+# Force push
+gp -f
+
 # Eventually make a Pull/Merge Request in Github/Gitlab
 # Once your PR/MR is reviewed, merge to main branch
 gco main
+git pull
 git merge --no-ff <BRANCH_NAME>
 gp
 # Eventually delete your branch
