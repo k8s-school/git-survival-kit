@@ -107,7 +107,6 @@ An other option is to:
 - then copy back your changes to the new repository
 - use previous KISS workflow
 
-
 ### View commit history
 
 ```shell
@@ -116,3 +115,7 @@ git logfull
 # View code for each commit
 git log -p
 ```
+
+## Other interesting resources
+
+[Getting Started with git and GitHub](https://github.com/drphilmarshall/GettingStarted)
