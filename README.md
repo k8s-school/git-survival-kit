@@ -31,7 +31,10 @@ It is recommended to use https://github.com/ohmyzsh/ohmyzsh and enable its `git`
 Add some aliases in your `$HOME/.bashrc`
 
 ```shell
+# For Ubuntu
 BASHRC="$HOME/.bash_aliases"
+# For MacOS
+BASHRC="$HOME/.bash_profile"
 echo "alias ga='git add .'" >> $BASHRC
 echo "alias gc='git commit'" >> $BASHRC
 echo "alias gco='git checkout'" >> $BASHRC
@@ -48,11 +51,21 @@ git clone https://github.com/k8s-school/git-survival-kit.git
 cd git-survival-kit
 # Create a branch
 gco -b <BRANCH_NAME>
+
+## ADD A COMMIT
 # Edit some files and add their content to the index
 ga .
 # Commit
 gc -m "Add a your feature description here"
-# Loop over two previous command until the feature implementation is completed
+# Push your commit
+gp
+# For the first push you have to cut and paste the command display by git cli
+git push --set-upstream origin <BRANCH_NAME>
+
+# Loop over the "ADD A COMMIT" section until the feature implementation is completed
+# or use all-in-one alias below
+gg
+
 # Then prepare merge on main branch, an easy solution is to squash your commits altogether
 git rebasemain
 # Eventually make a Pull/Merge Request in Github/Gitlab
@@ -67,7 +80,9 @@ git push origin --delete <BRANCH_NAME>
 
 ## Tips an tricks
 
-When working on a branch, if your local epository is screwed up, then you can try to fix it using:
+### Recover a screwed up repository
+
+When working on a branch, if your local repository is screwed up, then you can try to fix it using:
 ```shell
 # Stash your changes in a dirty working directory away
 git stash
@@ -85,3 +100,13 @@ An other option is to:
 - checkout the branch
 - then copy back your changes to the new repository
 - use previous KISS workflow
+
+
+### View commit history
+
+```shell
+# Nice view of commit history
+git logfull
+# View code for each commit
+git log -p
+```
