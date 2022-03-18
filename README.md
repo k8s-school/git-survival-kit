@@ -1,4 +1,4 @@
-# git-survival-kit
+# Git survival kit
 Basic tutorial for git
 
 ## Configuration and aliases
