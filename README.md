@@ -64,3 +64,24 @@ gp
 git branch -d <BRANCH_NAME>
 git push origin --delete <BRANCH_NAME>
 ```
+
+## Tips an tricks
+
+When working on a branch, if your local epository is screwed up, then you can try to fix it using:
+```shell
+# Stash your changes in a dirty working directory away
+git stash
+# Reset your branch to the remote one
+git resetorigin
+# Apply your stashed changes on top of the current working tree state
+git stash pop
+```
+
+An other option is to:
+- identify your change using `gst`
+- then copy it to a temporary directory
+- remove the repository
+- clone it again
+- checkout the branch
+- then copy back your changes to the new repository
+- use previous KISS workflow
